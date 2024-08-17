@@ -4,6 +4,56 @@
 
 /* ========================================== TAILWIND STYLES */
 @layer base {
+  :root {
+    --background: 0,0%,100%;
+    --foreground: 234,26%,31%;
+
+    --card: 0,0%,100%;
+    --card-foreground: 234,26%,31%;
+ 
+    --popover: 220, 23.1%, 97.5%;
+    --popover-foreground: 234,26%,31%;
+ 
+    --primary: 235.9, 98.8%, 68%;
+    --primary-foreground: 0,0%,100%;
+ 
+    --secondary: 236, 99%, 68% ,0.23;
+    --secondary-foreground: 0,0%,100%;
+
+    --tertiary:165.4, 100%, 42%;
+    --tertiary-foreground: 0,0%,100%;
+
+    --muted: 220, 23.1%, 97.5%;
+    --muted-foreground: 234,26%,31%;	
+ 
+    --accent: 236.1, 76.3%, 68.6%, 0.23;
+    --accent-foreground: 234,26%,31%;
+ 
+    --destructive: 0, 80.4%, 68%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 234.8, 11.6%, 61%, 0.33;
+    --input: 234.8, 11.6%, 61%, 0.33;
+    --ring: 235.9, 98.8%, 68%,0.45;
+    --ring-2:234.8, 11.6%, 61%;
+ 
+    --radius: 0.5rem;
+
+    --running-late : 32, 99%, 71%;
+    --seated:172.7, 49%, 60.8%;
+    --canceled:0, 80.4%, 68%;
+    --no-show:224.3, 34.3%, 73.7%;
+    --booked:184.2, 39.8%, 42.4%;
+    --confirmed:236.1, 76.3%, 68.6%;
+    --partially-seated:268.2, 36.7%, 64.7%;
+    --appetizer:269.7, 100%, 77.5%;
+    --entree:214.1, 48.6%, 58.8%;
+    --dessert:190.9, 87.9%, 45.5%;
+    --check-dropped:328, 62.9%, 67.3%;
+    --paid:46.8, 51.3%, 68.6%;
+    --finished:234.8, 11.9%, 37.8%;
+    --waiting:238, 100%, 94.1%;
+  }
   /* Remove scrollbar */
   .remove-scrollbar::-webkit-scrollbar {
     width: 0px;
@@ -264,6 +314,9 @@
 
   .shad-sheet-content button {
     @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+  .menu-item {
+    @apply text-black text-[16px] font-medium hover:text-blue-500
   }
 
   /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
