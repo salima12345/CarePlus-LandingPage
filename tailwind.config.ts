@@ -22,6 +22,9 @@ const config = {
     extend: {
       colors: {
         green: {
+          100: "#B3E1CD", 
+          200:"#34c38f",
+          300: "#66D1A7", 
           500: "#24AE7C",
           600: "#0D2A1F",
         },

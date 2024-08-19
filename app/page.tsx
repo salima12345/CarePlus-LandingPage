@@ -1,5 +1,5 @@
 
-import LandingPage from "@/components/LandingPage/page";
+import LandingPage from "@/components/LandingPage/Landing";
 
 
 

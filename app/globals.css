@@ -99,7 +99,7 @@
   }
 
   .header {
-    @apply text-32-bold md:text-36-bold;
+    @apply text-2xl font-bold md:text-3xl md:font-bold lg:text-4xl lg:font-bold leading-[120%];
   }
 
   .sub-header {
@@ -316,7 +316,7 @@
     @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
   .menu-item {
-    @apply text-black text-[16px] font-medium hover:text-blue-500
+    @apply text-black text-[16px] font-medium hover:text-green-500
   }
 
   /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
@@ -400,4 +400,16 @@
 
 .PhoneInputInput::placeholder {
   color: #1a1d21;
+}
+@keyframes iconAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-icon {
+  animation: iconAnimation 1s infinite;
 }

@@ -27,8 +27,11 @@ const Navbar = () => {
         </Link>
         <div className='md:flex hidden items-center gap-8 '>
           <Link href="/#Home" className='menu-item'>Home</Link>
-          <Link href="/#About" className='menu-item'>About us</Link>
           <Link href="/#Services" className='menu-item'>Services</Link>
+          <Link href="/#Departments" className='menu-item'>Departments</Link>
+
+
+          <Link href="/#Team" className='menu-item'>Team</Link>
           <Link href="/#Contact" className='menu-item'>Contact</Link>
         </div>
         <Button className='hidden md:block' >Make an Appointment</Button>
@@ -46,10 +49,13 @@ const Navbar = () => {
 
       {isExpanded && (
         <div className='flex flex-col flex-start gap-4 mt-4 md:hidden w-[80%] mx-auto'>
-          <Link href="/#Home" className='menu-item' onClick={() => setIsExpanded(false)}>Home</Link>
-          <Link href="/#About" className='menu-item' onClick={() => setIsExpanded(false)}>About us</Link>
-          <Link href="/#Services" className='menu-item' onClick={() => setIsExpanded(false)}>Services</Link>
-          <Link href="/#Contact" className='menu-item' onClick={() => setIsExpanded(false)}>Contact</Link>
+          <Link href="/#Home" className='menu-item font-medium' onClick={() => setIsExpanded(false)}>Home</Link>
+          <Link href="/#Services" className='menu-item font-medium' onClick={() => setIsExpanded(false)}>Services</Link>
+          <Link href="/#Departments" className='menu-item font-medium' onClick={() => setIsExpanded(false)}>Departments</Link>
+
+
+          <Link href="/#Team" className='menu-item font-medium' onClick={() => setIsExpanded(false)}>Team</Link>
+          <Link href="/#Contact" className='menu-item font-medium' onClick={() => setIsExpanded(false)}>Contact</Link>
           <Button className=' w-full '>Make an Appointment</Button>
 
         </div>
