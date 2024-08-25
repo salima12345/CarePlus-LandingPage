@@ -17,7 +17,7 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ icon: Icon, name, descr
       <h3 className="text-lg font-semibold text-gray-700">{name}</h3>
       <p className="text-sm text-gray-500 text-start flex-grow mb-2">{description}</p>
       <div className="mt-auto">
-        <Link href="/" className='text-blue-500 font-medium'>Learn more</Link>
+        <Link href="/" className='text-gray-700 font-medium hover:underline'>Learn more</Link>
       </div>
     </div>
   );

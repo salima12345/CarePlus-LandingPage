@@ -1,21 +1,13 @@
 "use client";
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { FaBrain, FaHeart, FaLungs, FaChild, FaEye } from 'react-icons/fa';
 import { MdOutlinePregnantWoman } from "react-icons/md";
-import { GiNoseSide } from "react-icons/gi";
+import { GiNoseSide, GiStomach } from "react-icons/gi";
 import { PiBoneFill } from "react-icons/pi";
-import { GiStomach } from "react-icons/gi";
 import { FaTooth } from "react-icons/fa";
 import { IoWaterSharp } from "react-icons/io5";
 import { RiPsychotherapyFill } from "react-icons/ri";
-
-
-
-
-
-
-
-
 import DepartmentCard from './DepartmentCard';
 
 const departments = [
@@ -35,8 +27,7 @@ const departments = [
 
 const DepartmentList: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 4;
-
+    const itemsPerPage = 4; 
     const totalPages = Math.ceil(departments.length / itemsPerPage);
 
     const handlePageChange = (page: number) => {
@@ -48,27 +39,44 @@ const DepartmentList: React.FC = () => {
     const currentDepartments = departments.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
     return (
-        <div className="w-full mx-auto mt-[3vh]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[23px]">
-                {currentDepartments.map((department) => (
-                    <DepartmentCard
+        <div className="w-full mx-auto mt-[15vh] px-4">
+            {/* Small Screen: Show all cards in a column with slide-up animation */}
+            <div className="sm:hidden flex flex-col space-y-4">
+                {departments.map((department) => (
+                    <div
                         key={department.id}
-                        icon={department.icon}
-                        name={department.name}
-                        description={department.description}
-                    />
+                        className="animate-slide-up" // Apply slide-up animation class
+                    >
+                        <DepartmentCard
+                            icon={department.icon}
+                            name={department.name}
+                            description={department.description}
+                        />
+                    </div>
                 ))}
             </div>
-            <div className="flex justify-center mt-6 space-x-2">
-                {Array.from({ length: totalPages }, (_, index) => (
-                    <button
-                        key={index}
-                        className={`px-4 py-2 rounded-full font-medium ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white'}`}
-                        onClick={() => handlePageChange(index + 1)}
-                    >
-                        {index + 1}
-                    </button>
-                ))}
+
+            {/* Larger screens: Grid with pagination */}
+            <div className="hidden sm:block">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+                    {currentDepartments.map((department) => (
+                        <DepartmentCard
+                            key={department.id}
+                            icon={department.icon}
+                            name={department.name}
+                            description={department.description}
+                        />
+                    ))}
+                </div>
+                <div className="flex justify-center mt-8 space-x-4">
+                    {Array.from({ length: totalPages }, (_, index) => (
+                        <button
+                            key={index}
+                            className={`w-4 h-4 rounded-full ${currentPage === index + 1 ? 'bg-blue-500' : 'bg-gray-300'}`}
+                            onClick={() => handlePageChange(index + 1)}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

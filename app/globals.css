@@ -39,20 +39,11 @@
  
     --radius: 0.5rem;
 
-    --running-late : 32, 99%, 71%;
-    --seated:172.7, 49%, 60.8%;
-    --canceled:0, 80.4%, 68%;
-    --no-show:224.3, 34.3%, 73.7%;
-    --booked:184.2, 39.8%, 42.4%;
-    --confirmed:236.1, 76.3%, 68.6%;
-    --partially-seated:268.2, 36.7%, 64.7%;
-    --appetizer:269.7, 100%, 77.5%;
-    --entree:214.1, 48.6%, 58.8%;
-    --dessert:190.9, 87.9%, 45.5%;
-    --check-dropped:328, 62.9%, 67.3%;
-    --paid:46.8, 51.3%, 68.6%;
-    --finished:234.8, 11.9%, 37.8%;
-    --waiting:238, 100%, 94.1%;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  }
+  .font-sans {
+    font-family: var(--font-sans);
   }
   /* Remove scrollbar */
   .remove-scrollbar::-webkit-scrollbar {
@@ -95,7 +86,7 @@
   }
 
   .bg-image {
-    @apply bg-black-900 bg-light-rays bg-cover bg-no-repeat;
+    @apply bg-black-900 bg-dark-rays bg-cover bg-no-repeat;
   }
 
   .header {
@@ -146,7 +137,7 @@
 
   /* ==== FORM */
   .radio-group {
-    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500 bg-dark-400 p-3;
+    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500  bg-dark-200 p-3;
   }
 
   .checkbox-label {
@@ -239,9 +230,12 @@
   .shad-danger-btn {
     @apply bg-red-700 text-white !important;
   }
+  .appointment-bg{
+    @apply bg-dark-200 !important;
+  }
 
   .shad-gray-btn {
-    @apply border border-dark-500 cursor-pointer bg-dark-400 text-white !important;
+    @apply border border-dark-200 cursor-pointer bg-dark-400 text-white !important;
   }
 
   .shad-input-label {
@@ -293,11 +287,11 @@
   }
 
   .shad-table-row-header {
-    @apply border-b border-dark-400 text-light-200 hover:bg-transparent !important;
+    @apply border-b border-dark-400 text-dark-200 hover:bg-transparent !important;
   }
 
   .shad-table-row {
-    @apply border-b border-dark-400 text-light-200 !important;
+    @apply border-b border-dark-400 text-dark-200 !important;
   }
 
   .shad-otp {
@@ -412,4 +406,18 @@
 
 .animate-icon {
   animation: iconAnimation 1s infinite;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);  
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);  
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;  
 }

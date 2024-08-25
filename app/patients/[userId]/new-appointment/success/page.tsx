@@ -21,7 +21,7 @@ const RequestSuccess = async ({
   
 
   return (
-    <div className=" flex h-screen max-h-screen px-[5%]">
+    <div className=" flex h-screen max-h-screen px-[5%] bg-dark-200 ">
       <div className="success-img">
         <Link href="/">
           <Image

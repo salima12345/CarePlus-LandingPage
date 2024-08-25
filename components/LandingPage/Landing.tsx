@@ -3,16 +3,18 @@ import Navbar from './Navbar'
 import Hero from './Hero'
 import Services from './Services/Services'
 import Departments from './Departments/Departments'
-import Team from './Team'
+import FaQ from './FaQ/FaQ'
+import Footer from './Footer'
 
 function LandingPage() {
   return (
-    <div>
+    <div >
         <Navbar/>
         <Hero/>
         <Services/>
         <Departments/>
-        <Team/>
+        <FaQ/>
+        <Footer/>
     </div>
   )
 }

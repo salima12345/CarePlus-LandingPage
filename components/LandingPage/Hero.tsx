@@ -1,3 +1,4 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
@@ -21,8 +22,9 @@ export default function HeroSection() {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-[120%] mt-5">Providing an Integrated Healthcare Solution</h1>
           <p className="text-gray-600 max-w-[500px] mt-5">{description}</p>
 
-          <Button className="mt-10">Discover our services</Button>
-
+          <Link href="#Services">
+                <Button className="mt-10">Discover our services</Button>
+            </Link>
           <div className="grid grid-cols-2 gap-8 mt-10 md:grid-cols-2 lg:grid-cols-4">
             {[
               { value: '30+', label: 'Doctors' },

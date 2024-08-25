@@ -3,7 +3,7 @@ import ServiceItem from './ServiceItem';
 
 const ServiceList: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-[6vh]">
       <ServiceItem
         title="Online Consultation"
         image="/assets/gifs/Animation - 1723988775344 (1).gif"
