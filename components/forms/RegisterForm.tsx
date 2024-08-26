@@ -158,7 +158,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               renderSkeleton={(field) => (
                 <FormControl>
                   <RadioGroup
-                    className="flex h-11 gap-6 xl:justify-between"
+                    className="flex h-11 gap-6 xl:justify-between text-white"
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
@@ -227,7 +227,7 @@ const RegisterForm = ({ user }: { user: User }) => {
           >
             {Doctors.map((doctor, i) => (
               <SelectItem key={doctor.name + i} value={doctor.name}>
-                <div className="flex cursor-pointer items-center gap-2">
+                <div className="flex cursor-pointer items-center gap-2 text-white">
                   <Image
                     src={doctor.image}
                     width={32}
