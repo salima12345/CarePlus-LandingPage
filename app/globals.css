@@ -39,20 +39,11 @@
  
     --radius: 0.5rem;
 
-    --running-late : 32, 99%, 71%;
-    --seated:172.7, 49%, 60.8%;
-    --canceled:0, 80.4%, 68%;
-    --no-show:224.3, 34.3%, 73.7%;
-    --booked:184.2, 39.8%, 42.4%;
-    --confirmed:236.1, 76.3%, 68.6%;
-    --partially-seated:268.2, 36.7%, 64.7%;
-    --appetizer:269.7, 100%, 77.5%;
-    --entree:214.1, 48.6%, 58.8%;
-    --dessert:190.9, 87.9%, 45.5%;
-    --check-dropped:328, 62.9%, 67.3%;
-    --paid:46.8, 51.3%, 68.6%;
-    --finished:234.8, 11.9%, 37.8%;
-    --waiting:238, 100%, 94.1%;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  }
+  .font-sans {
+    font-family: var(--font-sans);
   }
   /* Remove scrollbar */
   .remove-scrollbar::-webkit-scrollbar {
@@ -95,15 +86,15 @@
   }
 
   .bg-image {
-    @apply bg-black-900 bg-light-rays bg-cover bg-no-repeat;
+    @apply bg-black-900 bg-dark-rays bg-cover bg-no-repeat;
   }
 
   .header {
-    @apply text-32-bold md:text-36-bold;
+    @apply text-2xl  text-dark-700 font-bold md:text-3xl md:font-bold lg:text-4xl lg:font-bold leading-[120%];
   }
 
   .sub-header {
-    @apply text-18-bold md:text-24-bold;
+    @apply text-18-bold md:text-24-bold text-dark-700;
   }
 
   .container {
@@ -146,7 +137,7 @@
 
   /* ==== FORM */
   .radio-group {
-    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500 bg-dark-400 p-3;
+    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500  bg-dark-200 p-3 text-white;
   }
 
   .checkbox-label {
@@ -239,9 +230,12 @@
   .shad-danger-btn {
     @apply bg-red-700 text-white !important;
   }
+  .appointment-bg{
+    @apply bg-dark-200 !important;
+  }
 
   .shad-gray-btn {
-    @apply border border-dark-500 cursor-pointer bg-dark-400 text-white !important;
+    @apply border border-dark-200 cursor-pointer  bg-dark-400 text-white !important;
   }
 
   .shad-input-label {
@@ -249,7 +243,7 @@
   }
 
   .shad-input {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-dark-400 placeholder:text-dark-600 text-white border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-input-icon {
@@ -257,7 +251,7 @@
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-dark-400 placeholder:text-dark-600 text-white border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-combobox-item {
@@ -269,7 +263,7 @@
   }
 
   .shad-select-trigger {
-    @apply bg-dark-400  placeholder:text-dark-600 border-dark-500 h-11 focus:ring-0 focus:ring-offset-0 !important;
+    @apply bg-dark-400  placeholder:text-dark-600   border-dark-500 h-11 focus:ring-0 focus:ring-offset-0 !important;
   }
 
   .shad-select-content {
@@ -293,11 +287,11 @@
   }
 
   .shad-table-row-header {
-    @apply border-b border-dark-400 text-light-200 hover:bg-transparent !important;
+    @apply border-b border-dark-400 text-dark-200 hover:bg-transparent !important;
   }
 
   .shad-table-row {
-    @apply border-b border-dark-400 text-light-200 !important;
+    @apply border-b border-dark-400 text-dark-200 !important;
   }
 
   .shad-otp {
@@ -316,17 +310,22 @@
     @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
   .menu-item {
-    @apply text-black text-[16px] font-medium hover:text-blue-500
+    @apply text-black text-[16px] font-medium hover:text-green-500
   }
 
   /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
   .input-phone {
-    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-dark-400 placeholder:text-dark-600 border-dark-500 !important;
+    @apply mt-2 h-11 rounded-md px-3 text-sm border text-white bg-dark-400 placeholder:text-dark-600 border-dark-500 !important;
   }
+  .input-phone .PhoneInputCountry {
+    display: none; 
+}
+
+
 
   /* =====  REACT DATE PICKER OVERRIDES */
   .date-picker {
-    @apply overflow-hidden border-transparent w-full placeholder:text-dark-600  h-11 text-14-medium rounded-md px-3 outline-none !important;
+    @apply overflow-hidden border-transparent w-full placeholder:text-dark-600 text-white h-11 text-14-medium rounded-md px-3 outline-none !important;
   }
 }
 
@@ -400,4 +399,30 @@
 
 .PhoneInputInput::placeholder {
   color: #1a1d21;
+}
+@keyframes iconAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-icon {
+  animation: iconAnimation 1s infinite;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);  
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);  
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;  
 }

@@ -60,6 +60,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
                             placeholder={props.placeholder}
                             {...field}
                             className="shad-input border-0"
+                            autoComplete="off"
                         />
                     </FormControl>
                 </div>
@@ -72,6 +73,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
                         {...field}
                         className="shad-textArea"
                         disabled={props.disabled}
+                        autoComplete="off"  
                     />
                 </FormControl>
             );
@@ -86,13 +88,14 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
                         value={field.value as E164Number | undefined}
                         onChange={field.onChange}
                         className="input-phone"
+                        autoComplete="off"  
                     />
                 </FormControl>
             );
         case FormFieldType.CHECKBOX:
             return (
                 <FormControl>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 ">
                         <Checkbox
                             id={props.name}
                             checked={field.value}
@@ -106,7 +109,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
             );
         case FormFieldType.DATE_PICKER:
             return (
-                <div className="flex rounded-md border border-dark-500 bg-dark-400">
+                <div className="flex rounded-md border border-dark-500 bg-dark-400 ">
                     <Image
                         src="/assets/icons/calendar.svg"
                         height={24}
@@ -122,6 +125,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
                             timeInputLabel="Time:"
                             dateFormat={props.dateFormat ?? "MM/dd/yyyy"}
                             wrapperClassName="date-picker"
+                            autoComplete="off" 
                         />
                     </FormControl>
                 </div>
@@ -156,7 +160,7 @@ const CustomFormField = (props: CustomProps) => {
             control={control}
             name={name}
             render={({ field }) => (
-                <FormItem className="flex-1">
+                <FormItem className="flex-1 text-white">
                     {props.fieldType !== FormFieldType.CHECKBOX && label && (
                         <FormLabel className="shad-input-label">{label}</FormLabel>
                     )}
