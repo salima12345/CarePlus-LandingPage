@@ -5,7 +5,7 @@ import { PatientForm } from "@/components/forms/PatientForm";
 const MakeAppointment = () => {
 
   return (
-    <div className="flex h-screen max-h-screen  bg-dark-200">
+    <div className="flex h-screen max-h-screen  bg-dark-200 ">
 
       <section className="remove-scrollbar container my-auto">
         <div className="sub-container max-w-[496px]">
